@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Job Application Tracker </title>
+    <!-- talwind css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Google font  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+<body class="bg-[#F8FAFC]">
+
+    <header class="w-[95%] lg:w-[80%]  mx-auto p-5  ">
+        <h1 class="text-[#002C5C] text-[30px] lg:text-[50px] 
+        font-bold my-[30px] sm:text-[3px] "> Job Application Tracker</h1>
+        <div class="grid grid-cols-3 gap-3  ">
+
+            <!-- box-1 Total -->
+            <div class="bg-white  rounded-[10px] border-1 border-gray-100  p-[30px] hover:border-1 hover:border-[#002c5c]">
+
+                <h4 class="font-black font-semibold text-[24px]">Total</h4>
+                <p id="total-count" class="text-[20px]  font-bold">0</p>
+            </div>
+
+            <!-- box-2 Interview -->
+
+            <div class="bg-white  rounded-[10px] border-1 border-gray-100  p-[30px] hover:border-1 hover:border-[#002c5c]">
+
+                <h4 class="text-black font-semibold text-[24px]">Interview</h4>
+                <p id="interview-count" class="text-[20px] text-green-500 font-bold">0</p>
+            </div>
+
+            <!-- box-3 Rejected -->
+
+            <div class="bg-white  rounded-[10px] border-1 border-gray-100  p-[30px] hover:border-1 hover:border-[#002c5c]">
+
+                <h4 class="text-black font-semibold text-[24px]">Rejected</h4>
+                <p id="rejected-count" class="text-[20px] text-red-500 font-bold">0</p>
+            </div>
+        </div>
+    </header>
+
+    <hr class="my-5 border-gray-200 ">
+
+    <main class="w-[95%] lg:w-[80%]  mx-auto p-5">
+
+        <!-- button section -->
+    
+            <div> 
+                <h3 class="text-[#002C5C] text-[30px]
+                font-semibold my-[10px] ">Available Jobs</h3>     
+                <button onclick="toggleStyle('all-filter-btn')" id="all-filter-btn" class=" py-2 px-5 bg-[#3B82F6] text-white rounded hover:bg-[#3B82F6] hover:text-white"> ALL </button>           
+                <button onclick="toggleStyle('interview-filter-btn')" id="interview-filter-btn" class=" py-2 px-5 bg-gray-300 rounded hover:bg-[#3B82F6] hover:text-white"> Interview </button>               
+                <button onclick="toggleStyle('rejected-filter-btn')" id="rejected-filter-btn" class=" py-2 px-5 bg-gray-300 rounded hover:bg-[#3B82F6] hover:text-white"> Rejected</button>
+            </div>
+
+            <!-- Filtared section -->
+             
+             <section id="filtared-section" class="hidden">
+                <div class="empoty bg-white p-10 my-5 ">
+                        <img src="img/docs.png" >
+                        <p class="text-[25px]">No jobs available</p>
+                        <p>Check back soon for new job opportunities</p>
+                    </div>
+             </section>
+             
+                <!-- <section id="filtared-section" class="hidden">
+                    <div class="empoty bg-white p-10 my-5 ">
+                        <img src="img/docs.png" >
+                        <p class="text-[25px]">No jobs available</p>
+                        <p>Check back soon for new job opportunities</p>
+                    </div>
+                </section> -->
+
+        <section id="all-cards" class="space-y-6"> 
+
+            <!-- Card Section  1 -->         
+            <section class="my-4">
+
+                <!-- card parents Div  -->
+                <div class="card flex bg-white justify-between p-8 border rounded-2xl border-gray-200 ">
+                    <!-- Main part 1 -->
+                    <div class="space-y-4"> 
+                        <!-- part 1  -->
+                        <div>
+                            <h4 class="applyTrack text-[#002C5C] text-[35px] font-semibold my-[10px]">Mobile First Corp</h4>
+                            <p class="title text-[20px] text-gray-500"> 
+                                React Native Developer 
+                        </div>
+                        <!-- part 2  -->
+                        <div class="flex gap-4">
+                            <p class= "duration">
+                                 •Remote •Full-time            
+                            </p>
+
+                            <p class= "salary ">$130,000 - $175,000 </p>
+                        </div>
+                        <!-- part 3 -->
+                        <div>
+                            <p class="stotus bg-gray-300 text-gray-500 w-[30%] lg:w-[20%]   p-1 rounded text-center font-bold">
+                                Not Applied
+                            </p>
+                            <p class="notes text-[14px] my-2">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                        </div>
+                        <!-- part 4  -->
+                        <div>
+                            <button  class="interview-btn border rounded border-green-500 text-green-500 font-semibold px-4 py-2">Interview</button>
+                            
+                            <button  class="rejected-btn border rounded border-red-500 text-red-500 font-semibold px-4 py-2">Rejected</button>
+                        </div>
+
+                    </div>
+
+                    <!--Main part 2 -->
+                    <div>
+                        <p class="delate  bg-gray-200 text-gray-400 py-2 px-4 rounded-[10px] hover:bg-gray-600 hover:text-white "> <i class="fa-regular fa-trash-can"></i></p>
+                    </div>
+
+                </div>
+
+            </section>
+            <!-- end  -->
+        
+            <!-- Card Section  2          -->
+            <section class="my-4">
+
+                <!-- card parents Div  -->
+                <div class="card flex bg-white justify-between p-8 border rounded-2xl border-gray-200 ">
+                    <!-- Main part 1 -->
+                    <div class="space-y-4"> 
+                        <!-- part 1  -->
+                        <div>
+                            <h4 class="applyTrack text-[#002C5C] text-[35px] font-semibold my-[10px]">WebFlow Agency</h4>
+                            <p class="title text-[20px] text-gray-500"> 
+                               Web Designer & Developer
+                            </p>
+                        </div>
+                        <!-- part 2  -->
+                        <div class="flex gap-4">
+                            <p class= "duration">Los Angeles, CA • Part-time             
+                            </p>
+
+                            <p class= "salary ">$80,000 - $120,000 </p>
+                        </div>
+                        <!-- part 3 -->
+                        <div>
+                            <p class="stotus bg-gray-300 text-gray-500 w-[30%] lg:w-[20%]   p-1 rounded text-center font-bold">
+                                Not Applied
+                            </p>
+                            <p class="notes text-[14px] my-2">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+                        </div>
+                        <!-- part 4  -->
+                        <div>
+                            <button  class="interview-btn border rounded border-green-500 text-green-500 font-semibold px-4 py-2">Interview</button>
+                            
+                            <button  class="rejected-btn border rounded border-red-500 text-red-500 font-semibold px-4 py-2">Rejected</button>
+                        </div>
+
+                    </div>
+
+                    <!--Main part 2 -->
+                    <div>
+                        <p class="delate bg-gray-200 text-gray-400 py-2 px-4 rounded-[10px] hover:bg-gray-600 hover:text-white "> <i class="fa-regular fa-trash-can"></i></p>
+                    </div>
+
+                </div>
+
+            </section>
+            <!-- Card Section  3-->         
+            <section class="my-4">
+
+                <!-- card parents Div  -->
+                <div class="card flex bg-white justify-between p-8 border rounded-2xl border-gray-200 ">
+                    <!-- Main part 1 -->
+                    <div class="space-y-4"> 
+                        <!-- part 1  -->
+                        <div>
+                            <h4 class="applyTrack text-[#002C5C] text-[35px] font-semibold my-[10px]"> DataViz Solutions</h4>
+                            <p class="title text-[20px] text-gray-500"> 
+                                Data Visualization Specialist
+                            </p>
+                        </div>
+                        <!-- part 2  -->
+                        <div class="flex gap-4">
+                            <p class= "duration"> • Boston, MA • Full-time            
+                            </p>
+
+                            <p class= "salary ">$125,000 - $165,000 </p>
+                        </div>
+                        <!-- part 3 -->
+                        <div>
+                            <p class="stotus bg-gray-300 text-gray-500 w-[30%] lg:w-[20%]   p-1 rounded text-center font-bold">
+                                Not Applied
+                            </p>
+                            <p class="notes text-[14px] my-2">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.</p>
+                        </div>
+                        <!-- part 4  -->
+                        <div>
+                            <button  class="interview-btn border rounded border-green-500 text-green-500 font-semibold px-4 py-2">Interview</button>
+                            
+                            <button  class="rejected-btn border rounded border-red-500 text-red-500 font-semibold px-4 py-2">Rejected</button>
+                        </div>
+
+                    </div>
+
+                    <!--Main part 2 -->
+                    <div>
+                        <p class=" delate bg-gray-200 text-gray-400 py-2 px-4 rounded-[10px] hover:bg-gray-600 hover:text-white "> <i class="fa-regular fa-trash-can"></i></p>
+                    </div>
+
+                </div>
+
+            </section>
+            <!-- Card Section  4-->         
+            <section class="my-4">
+
+                <!-- card parents Div  -->
+                <div class="card flex bg-white justify-between p-8 border rounded-2xl border-gray-200 ">
+                    <!-- Main part 1 -->
+                    <div class="space-y-4"> 
+                        <!-- part 1  -->
+                        <div>
+                            <h4 class="applyTrack text-[#002C5C] text-[35px] font-semibold my-[10px]"> CloudFirst Inc</h4>
+                            <p class="title text-[20px] text-gray-500"> 
+                                Backend Developer
+                            </p>
+                        </div>
+                        <!-- part 2  -->
+                        <div class="flex gap-4">
+                            <p class= "duration">Seattle, WA • Full-time            
+                            </p>
+
+                            <p class= "salary ">$140,000 - $190,000 </p>
+                        </div>
+                        <!-- part 3 -->
+                        <div>
+                            <p class="stotus bg-gray-300 text-gray-500 w-[30%] lg:w-[20%]   p-1 rounded text-center font-bold">
+                                Not Applied
+                            </p>
+                            <p class="notes text-[14px] my-2">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.</p>
+                        </div>
+                        <!-- part 4  -->
+                        <div>
+                            <button  class="interview-btn border rounded border-green-500 text-green-500 font-semibold px-4 py-2">Interview</button>
+                            
+                            <button  class="rejected-btn border rounded border-red-500 text-red-500 font-semibold px-4 py-2">Rejected</button>
+                        </div>
+
+                    </div>
+
+                    <!--Main part 2 -->
+                    <div>
+                        <p class=" delate bg-gray-200 text-gray-400 py-2 px-4 rounded-[10px] hover:bg-gray-600 hover:text-white "> <i class="fa-regular fa-trash-can"></i></p>
+                    </div>
+
+                </div>
+
+            </section>
+            <!-- Card Section  5-->         
+            <section class="my-4">
+
+                <!-- card parents Div  -->
+                <div class="card flex bg-white justify-between p-8 border rounded-2xl border-gray-200 ">
+                    <!-- Main part 1 -->
+                    <div class="space-y-4"> 
+                        <!-- part 1  -->
+                        <div>
+                            <h4 class="applyTrack text-[#002C5C] text-[35px] font-semibold my-[10px]"> Innovation Labs</h4>
+                            <p class="title text-[20px] text-gray-500"> 
+                               UI/UX Engineer
+                            </p>
+                        </div>
+                        <!-- part 2  -->
+                        <div class="flex gap-4">
+                            <p class= "duration"> Austin, TX • Full-time
+           
+                            </p>
+
+                            <p class= "salary "> $110,000 - $150,000 </p>
+                        </div>
+                        <!-- part 3 -->
+                        <div>
+                            <p class="stotus bg-gray-300 text-gray-500 w-[30%] lg:w-[20%]   p-1 rounded text-center font-bold">
+                                Not Applied
+                            </p>
+                            <p class="notes text-[14px] my-2">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.</p>
+                        </div>
+                        <!-- part 4  -->
+                        <div>
+                            <button  class="interview-btn border rounded border-green-500 text-green-500 font-semibold px-4 py-2">Interview</button>
+                            
+                            <button  class="rejected-btn border rounded border-red-500 text-red-500 font-semibold px-4 py-2">Rejected</button>
+                        </div>
+
+                    </div>
+
+                    <!--Main part 2 -->
+                    <div>
+                        <p class=" delate bg-gray-200 text-gray-400 py-2 px-4 rounded-[10px] hover:bg-gray-600 hover:text-white "> <i class="fa-regular fa-trash-can"></i></p>
+                    </div>
+
+                </div>
+
+            </section>
+            <!-- Card Section 6-->         
+            <section class="my-4">
+
+                <!-- card parents Div  -->
+                <div class="card flex bg-white justify-between p-8 border rounded-2xl border-gray-200 ">
+                    <!-- Main part 1 -->
+                    <div class="space-y-4"> 
+                        <!-- part 1  -->
+                        <div>
+                            <h4 class="applyTrack text-[#002C5C] text-[35px] font-semibold my-[10px]"> MegaCorp Solutions</h4>
+                            <p class="title text-[20px] text-gray-500"> 
+                               JavaScript Developer
+                            </p>
+                        </div>
+                        <!-- part 2  -->
+                        <div class="flex gap-4">
+                            <p class= "duration"> New York, NY • Full-time            
+                            </p>
+
+                            <p class= "salary ">$130,000 - $170,00 </p>
+                        </div>
+                        <!-- part 3 -->
+                        <div>
+                            <p class="stotus bg-gray-300 text-gray-500 w-[30%] lg:w-[20%]   p-1 rounded text-center font-bold">
+                                Not Applied
+                            </p>
+                            <p class="notes text-[14px] my-2">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.</p>
+                        </div>
+                        <!-- part 4  -->
+                        <div>
+                            <button  class="interview-btn border rounded border-green-500 text-green-500 font-semibold px-4 py-2">Interview</button>
+                            
+                            <button  class="rejected-btn border rounded border-red-500 text-red-500 font-semibold px-4 py-2">Rejected</button>
+                        </div>
+
+                    </div>
+
+                    <!--Main part 2 -->
+                    <div>
+                        <p class=" delate bg-gray-200 text-gray-400 py-2 px-4 rounded-[10px] hover:bg-gray-600 hover:text-white "> <i class="fa-regular fa-trash-can"></i></p>
+                    </div>
+
+                </div>
+
+            </section>
+            <!-- Card Section 7-->         
+            <section class="my-4">
+
+                <!-- card parents Div  -->
+                <div class="card flex bg-white justify-between p-8 border rounded-2xl border-gray-200 ">
+                    <!-- Main part 1 -->
+                    <div class="space-y-4"> 
+                        <!-- part 1  -->
+                        <div>
+                            <h4 class="applyTrack text-[#002C5C] text-[35px] font-semibold my-[10px]"> StartupXYZ</h4>
+                            <p class="title text-[20px] text-gray-500"> 
+                              Full Stack Engineer
+                            </p>
+                        </div>
+                        <!-- part 2  -->
+                        <div class="flex gap-4">
+                            <p class= "duration"> Remote • Full-time 
+          
+                            </p>
+
+                            <p class= "salary "> $120,000 - $160,000 </p>
+                        </div>
+                        <!-- part 3 -->
+                        <div>
+                            <p class="stotus bg-gray-300 text-gray-500 w-[30%] lg:w-[20%]   p-1 rounded text-center font-bold">
+                                Not Applied
+                            </p>
+                            <p class="notes text-[14px] my-2">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.</p>
+                        </div>
+                        <!-- part 4  -->
+                        <div>
+                            <button  class="interview-btn border rounded border-green-500 text-green-500 font-semibold px-4 py-2">Interview</button>
+                            
+                            <button  class="rejected-btn border rounded border-red-500 text-red-500 font-semibold px-4 py-2">Rejected</button>
+                        </div>
+
+                    </div>
+
+                    <!--Main part 2 -->
+                    <div>
+                        <p class=" delate bg-gray-200 text-gray-400 py-2 px-4 rounded-[10px] hover:bg-gray-600 hover:text-white "> <i class="fa-regular fa-trash-can"></i></p>
+                    </div>
+
+                </div>
+
+            </section>
+            <!-- Card Section 8-->         
+            <section class="my-4">
+
+                <!-- card parents Div  -->
+                <div class="card flex bg-white justify-between p-8 border rounded-2xl border-gray-200 ">
+                    <!-- Main part 1 -->
+                    <div class="space-y-4"> 
+                        <!-- part 1  -->
+                        <div>
+                            <h4 class="applyTrack text-[#002C5C] text-[35px] font-semibold my-[10px]"> TechCorp Industries </h4>
+                            <p class="title text-[20px] text-gray-500"> 
+                               Senior Frontend Developer
+                            </p>
+                        </div>
+                        <!-- part 2  -->
+                        <div class="flex gap-4">
+                            <p class= "duration"> San Francisco, CA • Full-time            
+                            </p>
+
+                            <p class= "salary "> $130,000 - $175,000</p>
+                        </div>
+                        <!-- part 3 -->
+                        <div>
+                            <p class="stotus bg-gray-300 text-gray-500 w-[30%] lg:w-[20%]   p-1 rounded text-center font-bold">
+                                Not Applied
+                            </p>
+                            <p class="notes text-[14px] my-2">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.</p>
+                        </div>
+                        <!-- part 4  -->
+                        <div>
+                            <button  class="interview-btn border rounded border-green-500 text-green-500 font-semibold px-4 py-2">Interview</button>
+                            
+                            <button  class="rejected-btn border rounded border-red-500 text-red-500 font-semibold px-4 py-2">Rejected</button>
+                        </div>
+
+                    </div>
+
+                    <!--Main part 2 -->
+                    <div>
+                        <p class=" delate bg-gray-200 text-gray-400 py-2 px-4 rounded-[10px] hover:bg-gray-600 hover:text-white "> <i class="fa-regular fa-trash-can"></i></p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            
+
+            
+            
+  
+           
+
+        </section>
+            
+    </main>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
