@@ -236,7 +236,7 @@ function renderrejected (){
     filtareSection.innerHTML='';
 
      if(rejectedList.length === 0){
-        // কোনো কার্ড নেই
+      
         let div = document.createElement('div');
         div.className = 'text-gray-500 text-[20px] p-10';
         div.innerHTML = `<div class="empoty bg-white p-10 my-5 ">
@@ -245,7 +245,7 @@ function renderrejected (){
                         <p>Check back soon for new job opportunities</p>
                     </div>`;
         filtareSection.appendChild(div);
-        return; // এখান থেকে ফাংশন শেষ
+        return; 
     }
 
     for(let rej of rejectedList ){
